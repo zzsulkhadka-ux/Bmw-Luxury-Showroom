@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-bmw-purple: #9333ea;
+  --color-bmw-purple-dark: #4c1d95;
+  --color-bmw-black: #050505;
+  --color-bmw-white: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-bmw-black text-bmw-white font-sans overflow-x-hidden;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-bmw-purple to-purple-400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bmw-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bmw-purple/30 rounded-full hover:bg-bmw-purple/50 transition-colors;
+}
